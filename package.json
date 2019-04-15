@@ -1,0 +1,28 @@
+{
+  "name": "lagou-mds-util",
+  "version": "1.0.0",
+  "description": "简招工具类",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config rollup.config.js"
+  },
+  "author": "lisen",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "rollup": "^1.10.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-typescript": "^1.0.1",
+    "the-answer": "^1.0.0"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "index.js"
+  ]
+}
