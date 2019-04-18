@@ -5,13 +5,13 @@ const babel = require('gulp-babel');
 const sourceFilePathArray = require('./config/config-read-file');
 const ts = require('gulp-typescript');
 
-const fileList = sourceFilePathArray();
+const entryDir = 'src';
+const outputDir = 'dist';
 
-const originEntry = 'lib';
-const targetEntry = 'build';
+const fileList = sourceFilePathArray(entryDir);
 
 // base层级下 编译时保持目录结构不变
-const excludeSpecifiedPaths = {'base': originEntry};
+const excludeSpecifiedPaths = {'base': entryDir};
 
 gulp.task('compress', function() {
 
@@ -28,7 +28,7 @@ gulp.task('compress', function() {
             presets: ['@babel/env']
         }))
         .pipe(umd())
-        .pipe(gulp.dest(targetEntry));
+        .pipe(gulp.dest(outputDir));
 
     gulp.src(_ts_filePathArray, excludeSpecifiedPaths)
         .pipe(ts({
@@ -38,9 +38,15 @@ gulp.task('compress', function() {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(gulp.dest(targetEntry));
+        .pipe(gulp.dest(outputDir));
 
 });
 
-gulp.task('compile', ['umd', 'concat']);
-gulp.task('default', ['compile', 'bump', 'mark', 'compress']);
+gulp.task('watch', function(){
+    gulp.watch(entryDir + '/*', ['compress']).on('change', function(event) {
+        const filePathSplitArray = event.path.split('/');
+        const fileName = filePathSplitArray[filePathSplitArray.length-1];
+        util.log('文件[' + util.colors.blue.bold(fileName) + ']' + event.type);
+    });
+
+});
