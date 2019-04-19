@@ -73,3 +73,10 @@ export function SelectContent(element) {
     selection.removeAllRanges();
     selection.addRange(rangeToSelect);
 }
+
+const cookie ={
+    CopyToClipboard,
+    CreateElementForExecCommand,
+    SelectContent
+};
+export default cookie;

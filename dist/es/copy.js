@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.CopyToClipboard = CopyToClipboard;
 exports.CreateElementForExecCommand = CreateElementForExecCommand;
 exports.SelectContent = SelectContent;
+exports["default"] = void 0;
 
 // clipboard
 function CopyToClipboard(textToClipboard) {
@@ -77,5 +78,13 @@ function SelectContent(element) {
   selection.removeAllRanges();
   selection.addRange(rangeToSelect);
 }
+
+var cookie = {
+  CopyToClipboard: CopyToClipboard,
+  CreateElementForExecCommand: CreateElementForExecCommand,
+  SelectContent: SelectContent
+};
+var _default = cookie;
+exports["default"] = _default;
 return Copy;
 }));

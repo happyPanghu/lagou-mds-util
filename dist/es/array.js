@@ -12,9 +12,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.formatData = formatData;
-exports.contain = contain;
-exports.subset = subset;
+exports["default"] = void 0;
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -86,5 +84,14 @@ function subset(current, target) {
     return res && currentRes;
   }, true);
 }
+
+var array = {
+  formatData: formatData,
+  getArray: getArray,
+  contain: contain,
+  subset: subset
+};
+var _default = array;
+exports["default"] = _default;
 return Array;
 }));
