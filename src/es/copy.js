@@ -48,7 +48,7 @@ export function CopyToClipboard(textToClipboard) {
 
 }
 
-function CreateElementForExecCommand(textToClipboard) {
+export function CreateElementForExecCommand(textToClipboard) {
     var forExecElement = document.createElement('div');
     // place outside the visible area
     forExecElement.style.position = 'absolute';
@@ -63,7 +63,7 @@ function CreateElementForExecCommand(textToClipboard) {
     return forExecElement;
 }
 
-function SelectContent(element) {
+export function SelectContent(element) {
     // first create a range
     var rangeToSelect = document.createRange();
     rangeToSelect.selectNodeContents(element);

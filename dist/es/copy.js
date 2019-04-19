@@ -13,6 +13,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.CopyToClipboard = CopyToClipboard;
+exports.CreateElementForExecCommand = CreateElementForExecCommand;
+exports.SelectContent = SelectContent;
 
 // clipboard
 function CopyToClipboard(textToClipboard) {
