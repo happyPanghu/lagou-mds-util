@@ -74,9 +74,9 @@ export function SelectContent(element) {
     selection.addRange(rangeToSelect);
 }
 
-const cookie ={
+const copy ={
     CopyToClipboard,
     CreateElementForExecCommand,
     SelectContent
 };
-export default cookie;
+export default copy;

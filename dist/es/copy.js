@@ -79,12 +79,12 @@ function SelectContent(element) {
   selection.addRange(rangeToSelect);
 }
 
-var cookie = {
+var copy = {
   CopyToClipboard: CopyToClipboard,
   CreateElementForExecCommand: CreateElementForExecCommand,
   SelectContent: SelectContent
 };
-var _default = cookie;
+var _default = copy;
 exports["default"] = _default;
 return Copy;
 }));
