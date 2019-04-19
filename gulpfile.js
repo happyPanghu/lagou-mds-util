@@ -42,8 +42,19 @@ gulp.task('compress', function() {
 
 });
 
+gulp.task('test', function() {
+    gulp.src(sourceFilePathArray('test'), {'base': 'test'})
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(umd())
+        .pipe(gulp.dest('dist/test'));
+
+});
+
 gulp.task('watch', function(){
-    gulp.watch(entryDir + '/*', ['compress']).on('change', function(event) {
+    const listenerDir = `${entryDir}/**`;
+    gulp.watch(listenerDir, ['compress']).on('change', function(event) {
         const filePathSplitArray = event.path.split('/');
         const fileName = filePathSplitArray[filePathSplitArray.length-1];
         util.log('文件[' + util.colors.blue.bold(fileName) + ']' + event.type);
