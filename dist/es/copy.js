@@ -79,12 +79,12 @@ function SelectContent(element) {
   selection.addRange(rangeToSelect);
 }
 
-var copy = {
+var Copy = {
   CopyToClipboard: CopyToClipboard,
   CreateElementForExecCommand: CreateElementForExecCommand,
   SelectContent: SelectContent
 };
-var _default = copy;
+var _default = Copy;
 exports["default"] = _default;
 return Copy;
 }));

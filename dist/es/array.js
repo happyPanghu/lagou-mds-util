@@ -85,13 +85,13 @@ function subset(current, target) {
   }, true);
 }
 
-var array = {
+var Array = {
   formatData: formatData,
   getArray: getArray,
   contain: contain,
   subset: subset
 };
-var _default = array;
+var _default = Array;
 exports["default"] = _default;
 return Array;
 }));

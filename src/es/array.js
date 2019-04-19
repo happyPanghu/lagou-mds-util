@@ -55,10 +55,10 @@
     }, true);
 }
 
- const array={
+ const Array={
     formatData,
     getArray,
     contain,
     subset
 }
- export default array;
+ export default Array;

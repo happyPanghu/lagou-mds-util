@@ -74,9 +74,9 @@ export function SelectContent(element) {
     selection.addRange(rangeToSelect);
 }
 
-const copy ={
+const Copy ={
     CopyToClipboard,
     CreateElementForExecCommand,
     SelectContent
 };
-export default copy;
+export default Copy;
