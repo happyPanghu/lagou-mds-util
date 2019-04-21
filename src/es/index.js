@@ -3,8 +3,8 @@
 import * as array from './array';
 import * as copy   from './copy';
 import * as cookie   from './cookie';
-
-export default {
+const a=1;
+export const util= {
     ...array,
     ...copy,
     ...cookie
