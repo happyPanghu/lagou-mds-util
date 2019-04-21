@@ -1,11 +1,11 @@
-export  * as array from './array';
-// export default   from './copy';
+"use strict";
 
-// const a=1
-// console.log(a)
-// const Index ={
-//     array,
-//     copy
-// };
-//
-// // export default Index;
+import * as array from './array';
+import * as copy   from './copy';
+import * as cookie   from './cookie';
+
+export default {
+    array,
+    copy,
+    cookie
+};

@@ -74,6 +74,9 @@ export function SelectContent(element) {
     selection.removeAllRanges();
     selection.addRange(rangeToSelect);
 }
+function f() {
+    console.log(1)
+}
 
 const Copy ={
     CopyToClipboard,
