@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.util = void 0;
+exports["default"] = void 0;
 
 var array = _interopRequireWildcard(require("./array"));
 
@@ -17,8 +17,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var a = 1;
+var _default = _objectSpread({}, array, copy, cookie);
 
-var util = _objectSpread({}, array, copy, cookie);
-
-exports.util = util;
+exports["default"] = _default;
