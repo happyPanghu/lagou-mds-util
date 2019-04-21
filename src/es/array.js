@@ -1,4 +1,4 @@
- function formatData(data) {
+export function formatData(data) {
     if (typeof data === 'string') {
         let obj = null;
         fetch(data).then((response) => response.json()).then(res => {
@@ -11,7 +11,7 @@
         return getArray(data);
     }
 }
- function getArray(arr) {
+export  function getArray(arr) {
     if (arr.length === 0) {
         return [];
     }
@@ -25,7 +25,7 @@
     return arr;
 }
 
- function contain(arr, item) {
+export function contain(arr, item) {
     if (!(arr instanceof Array)) {
         return false;
     }
@@ -37,7 +37,7 @@
 // 判断一个字符串数组是否另一个字符串数组的子集
 // ['a', 'b'] in ['a', 'b', 'c'] => true
 // ['a', 'b', '!c'] in ['a', 'b', 'c'] => false
- function subset(current, target) {
+export function subset(current, target) {
     if (!(current instanceof Array)) {
         if (current[0] === '!') {
             return target.indexOf(current.slice(1)) < 0;
@@ -55,10 +55,3 @@
     }, true);
 }
 
- const Array={
-    formatData,
-    getArray,
-    contain,
-    subset
-}
- export default Array;

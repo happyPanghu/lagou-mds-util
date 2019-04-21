@@ -12,23 +12,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "array", {
-  enumerable: true,
-  get: function get() {
-    return _array["default"];
-  }
+
+var _array = require("./array");
+
+Object.keys(_array).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _array[key];
+    }
+  });
 });
-Object.defineProperty(exports, "copy", {
-  enumerable: true,
-  get: function get() {
-    return _copy["default"];
-  }
-});
-
-var _array = _interopRequireDefault(require("./array"));
-
-var _copy = _interopRequireDefault(require("./copy"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 return Index;
 }));
