@@ -1,7 +1,7 @@
 "use strict";
 
 import * as array from './array';
-// import * as copy   from './copy';
+import * as copy   from './copy';
 // import * as cookie   from './cookie';
 // export default {
 //     ...array,
@@ -9,4 +9,7 @@ import * as array from './array';
 //     ...cookie
 // };
 
-export const array = array;
+export {
+    array,
+    copy
+}
