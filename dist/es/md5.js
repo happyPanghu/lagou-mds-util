@@ -1,12 +1,3 @@
-;(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory();
-  } else {
-    root.Md5 = factory();
-  }
-}(this, function() {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -203,5 +194,3 @@ if (md5('hello') != '5d41402abc4b2a76b9719d911017c592') {
 
 var _default = md5;
 exports["default"] = _default;
-return Md5;
-}));

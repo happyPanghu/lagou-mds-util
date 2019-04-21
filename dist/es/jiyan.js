@@ -1,12 +1,3 @@
-;(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory();
-  } else {
-    root.Jiyan = factory();
-  }
-}(this, function() {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -74,5 +65,3 @@ var getSenseKey = function getSenseKey(obj) {
 
 var _default = getSenseKey;
 exports["default"] = _default;
-return Jiyan;
-}));
