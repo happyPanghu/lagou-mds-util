@@ -1,12 +1,3 @@
-;(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory();
-  } else {
-    root.FetchError = factory();
-  }
-}(this, function() {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -105,5 +96,3 @@ function fetchData(action, path, data, type, code) {
     }
   };
 }
-return FetchError;
-}));

@@ -1,12 +1,3 @@
-;(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory();
-  } else {
-    root.EventProxy = factory();
-  }
-}(this, function() {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64,5 +55,3 @@ var eventProxy = {
 };
 var _default = eventProxy;
 exports["default"] = _default;
-return EventProxy;
-}));

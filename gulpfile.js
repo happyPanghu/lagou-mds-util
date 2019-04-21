@@ -27,14 +27,14 @@ gulp.task('compress', function() {
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(umd())
+        // .pipe(umd())
         .pipe(gulp.dest(outputDir));
 
     gulp.src(_ts_filePathArray, excludeSpecifiedPaths)
-        .pipe(ts({
-            noImplicitAny: true,
-            module: 'umd'
-        }))
+        // .pipe(ts({
+        //     noImplicitAny: true,
+        //     module: 'umd'
+        // }))
         .pipe(babel({
             presets: ['@babel/env']
         }))

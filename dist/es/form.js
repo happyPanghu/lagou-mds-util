@@ -1,12 +1,3 @@
-;(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory();
-  } else {
-    root.Form = factory();
-  }
-}(this, function() {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71,5 +62,3 @@ function delForm(element) {
     element.parentNode.removeChild(toDel);
   }
 }
-return Form;
-}));

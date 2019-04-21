@@ -47,6 +47,7 @@ export function CopyToClipboard(textToClipboard) {
     }
 
 }
+console.log(1)
 
 export function CreateElementForExecCommand(textToClipboard) {
     var forExecElement = document.createElement('div');

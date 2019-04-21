@@ -1,12 +1,3 @@
-;(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory();
-  } else {
-    root.Copy = factory();
-  }
-}(this, function() {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -55,6 +46,8 @@ function CopyToClipboard(textToClipboard) {
   }
 }
 
+console.log(1);
+
 function CreateElementForExecCommand(textToClipboard) {
   var forExecElement = document.createElement('div'); // place outside the visible area
 
@@ -86,5 +79,3 @@ var Copy = {
 };
 var _default = Copy;
 exports["default"] = _default;
-return Copy;
-}));
