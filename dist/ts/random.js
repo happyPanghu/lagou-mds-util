@@ -43,43 +43,35 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }
 
   exports.random = random;
-  /**
-   * 请求散列工具函数 Promise 版
-   *
-   * @param fn 被散列的函数, promise
-   * @param time 随机时间，单位秒。api 请求将在 0 -time 中散列。
-   * @example
-   * ```javascript
-   *
-   * const sendRequest = randomPromise(function(){
-   *   return Promise.resolve(10);
-   * }, 3); // 调用后，将在 0-3s内发起真正请求
-   *
-   * sendRequest().then(data=> {
-   *   console.log(data); // 10
-   * });
-   * ```
-   */
-
-  function randomPromise(fn, time) {
-    return function () {
-      var args = [];
-
-      for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
-      }
-
-      return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-          fn.apply(void 0, args).then(function (data) {
-            resolve(data);
-          })["catch"](function (err) {
-            reject(err);
-          });
-        }, Math.random() * time * 1000);
-      });
-    };
-  }
-
-  exports.randomPromise = randomPromise;
 });
+/**
+ * 请求散列工具函数 Promise 版
+ *
+ * @param fn 被散列的函数, promise
+ * @param time 随机时间，单位秒。api 请求将在 0 -time 中散列。
+ * @example
+ * ```javascript
+ *
+ * const sendRequest = randomPromise(function(){
+ *   return Promise.resolve(10);
+ * }, 3); // 调用后，将在 0-3s内发起真正请求
+ *
+ * sendRequest().then(data=> {
+ *   console.log(data); // 10
+ * });
+ * ```
+ */
+// export function randomPromise(fn: Function, time: number) {
+//   return (...args: any) => {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(
+//         () => {
+//           fn(...args)
+//             .then((data: any) => { resolve(data); })
+//             .catch((err: any) => { reject(err); });
+//         },
+//         Math.random() * time * 1000,
+//       );
+//     });
+//   };
+// }

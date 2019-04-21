@@ -40,17 +40,17 @@ export function random(fn: Function, time: number) {
  * });
  * ```
  */
-export function randomPromise(fn: Function, time: number) {
-  return (...args: any) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(
-        () => {
-          fn(...args)
-            .then((data: any) => { resolve(data); })
-            .catch((err: any) => { reject(err); });
-        },
-        Math.random() * time * 1000,
-      );
-    });
-  };
-}
+// export function randomPromise(fn: Function, time: number) {
+//   return (...args: any) => {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(
+//         () => {
+//           fn(...args)
+//             .then((data: any) => { resolve(data); })
+//             .catch((err: any) => { reject(err); });
+//         },
+//         Math.random() * time * 1000,
+//       );
+//     });
+//   };
+// }
