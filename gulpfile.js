@@ -5,8 +5,8 @@ const babel = require('gulp-babel');
 const sourceFilePathArray = require('./config/config-read-file');
 const ts = require('gulp-typescript');
 
-const entryDir = 'src';
-const outputDir = 'dist';
+const entryDir = 'es';
+const outputDir = 'lib';
 
 const fileList = sourceFilePathArray(entryDir);
 
