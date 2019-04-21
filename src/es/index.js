@@ -5,7 +5,7 @@ import * as copy   from './copy';
 import * as cookie   from './cookie';
 
 export default {
-    array,
-    copy,
-    cookie
+    ...array,
+    ...copy,
+    ...cookie
 };
