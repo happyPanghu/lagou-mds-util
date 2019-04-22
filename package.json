@@ -4,9 +4,9 @@
   "description": "简招工具类",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "compress": "gulp compress",
-    "build": "gulp watch"
+    "build": "gulp watch",
+    "test": "gulp test"
   },
   "author": "lisen",
   "license": "ISC",

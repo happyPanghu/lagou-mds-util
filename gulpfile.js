@@ -48,7 +48,7 @@ gulp.task('dist',function() {
 });
 
 gulp.task('test', function() {
-    gulp.src(sourceFilePathArray('test'))
+    gulp.src('test/index.js')
         .pipe(rename('test.js'))
         .pipe(babel({
             presets: ['@babel/env']
