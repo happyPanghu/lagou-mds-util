@@ -47,7 +47,7 @@ gulp.task('compressTs', function() {
 
 gulp.task('dist',function() {
     gulp.src('lib/*')
-        .pipe(concat('util.js'))
+        .pipe(concat('index.js'))
         .pipe(umd())
         .pipe(gulp.dest('dist'));
 });
