@@ -1,6 +1,6 @@
 {
   "name": "lagou-mds-util",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "简招工具类",
   "main": "dist/es/index.js",
   "scripts": {
