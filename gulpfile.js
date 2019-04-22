@@ -3,7 +3,6 @@ const umd = require('gulp-umd');
 const util = require('gulp-util');
 const babel = require('gulp-babel');
 const sourceFilePathArray = require('./config/config-read-file');
-const ts = require('gulp-typescript');
 const tsc = require('gulp-tsc');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
@@ -13,7 +12,7 @@ const outputDir = 'lib';
 
 const fileList = sourceFilePathArray(entryDir);
 
-// base层级下 编译时保持目录结构不变
+// base 父层级 编译时依次从父层级下开始编译 并创建对应层级的同名文件夹和文件
 const excludeSpecifiedPaths = {'base': entryDir};
 
 gulp.task('compressEs', function() {
@@ -33,13 +32,9 @@ gulp.task('compressTs', function() {
         return item.indexOf('ts') > -1
     });
     gulp.src(_ts_filePathArray)
-    // .pipe(ts({
-    //     noImplicitAny: true,
-    //     module: 'umd'
-    // }))
         .pipe(tsc({
-            target: 'es6',//把typescript转换成es6标准的js文件
-            module: 'commonjs',//模块使用nodejs的标准
+            target: 'es6',
+            module: 'commonjs',
         }))
         .pipe(gulp.dest('src/es'));
 
@@ -52,16 +47,16 @@ gulp.task('dist',function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('compress', ['compressTs', 'compressEs', 'dist']);
-
 gulp.task('test', function() {
-    gulp.src(sourceFilePathArray('test'), {'base': 'test'})
+    gulp.src(sourceFilePathArray('test'))
+        .pipe(rename('test.js'))
         .pipe(babel({
             presets: ['@babel/env']
         }))
-        .pipe(umd())
-        .pipe(gulp.dest('dist/test'));
+        .pipe(gulp.dest('test'));
 });
+
+gulp.task('compress', ['compressTs', 'compressEs', 'dist']);
 
 gulp.task('watch', function(){
     const listenerDir = `${entryDir}/**`;
