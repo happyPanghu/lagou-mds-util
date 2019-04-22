@@ -4,43 +4,55 @@ const util = require('gulp-util');
 const babel = require('gulp-babel');
 const sourceFilePathArray = require('./config/config-read-file');
 const ts = require('gulp-typescript');
+const tsc = require('gulp-tsc');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
 
 const entryDir = 'src';
-const outputDir = 'dist';
+const outputDir = 'lib';
 
 const fileList = sourceFilePathArray(entryDir);
 
 // base层级下 编译时保持目录结构不变
 const excludeSpecifiedPaths = {'base': entryDir};
 
-gulp.task('compress', function() {
-
+gulp.task('compressEs', function() {
     const _js_filePathArray = fileList.filter(item => {
         return item.indexOf('js') > -1
     });
+    // gulp.src(_js_filePathArray, excludeSpecifiedPaths)
+    gulp.src(_js_filePathArray)
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(gulp.dest(outputDir));
+});
 
+gulp.task('compressTs', function() {
     const _ts_filePathArray = fileList.filter(item => {
         return item.indexOf('ts') > -1
     });
-
-    gulp.src(_js_filePathArray, excludeSpecifiedPaths)
-        .pipe(babel({
-            presets: ['@babel/env']
+    gulp.src(_ts_filePathArray)
+    // .pipe(ts({
+    //     noImplicitAny: true,
+    //     module: 'umd'
+    // }))
+        .pipe(tsc({
+            target: 'es6',//把typescript转换成es6标准的js文件
+            module: 'commonjs',//模块使用nodejs的标准
         }))
-        // .pipe(umd())
-        .pipe(gulp.dest(outputDir));
-
-    gulp.src(_ts_filePathArray, excludeSpecifiedPaths)
-        // .pipe(ts({
-        //     noImplicitAny: true,
-        //     module: 'umd'
-        // }))
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(gulp.dest(outputDir));
+        .pipe(gulp.dest('src/es'));
 
 });
+
+gulp.task('dist',function() {
+    gulp.src('lib/*')
+        .pipe(concat('util.js'))
+        .pipe(umd())
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('compress', ['compressTs', 'compressEs', 'dist']);
 
 gulp.task('test', function() {
     gulp.src(sourceFilePathArray('test'), {'base': 'test'})
@@ -49,7 +61,6 @@ gulp.task('test', function() {
         }))
         .pipe(umd())
         .pipe(gulp.dest('dist/test'));
-
 });
 
 gulp.task('watch', function(){
