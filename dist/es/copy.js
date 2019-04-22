@@ -72,6 +72,10 @@ function SelectContent(element) {
   selection.addRange(rangeToSelect);
 }
 
+function f() {
+  console.log(1);
+}
+
 var Copy = {
   CopyToClipboard: CopyToClipboard,
   CreateElementForExecCommand: CreateElementForExecCommand,
