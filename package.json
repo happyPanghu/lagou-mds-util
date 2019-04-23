@@ -41,6 +41,5 @@
   ],
   "dependencies": {
     "tslib": "^1.9.3"
-  },
-  "typings": "src/ts/index.d.ts"
+  }
 }
