@@ -1,5 +1,4 @@
 "use strict";
-
 export * as array from './array';
 export * as copy   from './copy';
 export * as cookie   from './cookie';
@@ -23,29 +22,3 @@ export * as random   from './random';
 export * as regs   from './regs';
 export * as string   from './string';
 export * as url   from './url';
-//
-// export {
-//     array,
-//     copy,
-//     cookie,
-//     browserCheck,
-//     channelConst,
-//     deepCopy,
-//     dom,
-//     eventProxy,
-//     fetch,
-//     fetchError,
-//     form,
-//     getRandom,
-//     highlight,
-//     jiyan,
-//     jsonp,
-//     localStorage,
-//     md5,
-//     pinyin,
-//     pubsub,
-//     random,
-//     regs,
-//     string,
-//     url
-// }
