@@ -1,4 +1,4 @@
-export const browerCheck = {
+export const browserCheck = {
     isWin32: navigator.platform == 'Win32' ? true : false,
     isWindows: navigator.platform == 'Windows' ? true : false,
     isWin2000: /Windows NT 5.0/i.test(navigator.userAgent) ? true : false,
@@ -18,7 +18,7 @@ export const browerCheck = {
     isIE: (navigator.userAgent.indexOf('compatible') > -1 && navigator.userAgent.indexOf('MSIE') > -1 && !(navigator.userAgent.indexOf('Opera') > -1)) ? true : false,
     is360: is360()
 };
-function is360() {
+export function is360() {
 
     // application/vnd.chromium.remoting-viewer 可能为360特有
     var is360 = _mime('type', 'application/vnd.chromium.remoting-viewer');
@@ -29,13 +29,13 @@ function is360() {
     return is360;
 }
 // 检测是否是谷歌内核(可排除360及谷歌以外的浏览器)
-function isChrome() {
+export function isChrome() {
     var ua = navigator.userAgent.toLowerCase();
 
     return ua.indexOf('chrome') > 1;
 }
 // 测试mime
-function _mime(option, value) {
+export function _mime(option, value) {
     var mimeTypes = navigator.mimeTypes;
     for (var mt in mimeTypes) {
         if (mimeTypes[mt][option] == value) {
