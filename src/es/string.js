@@ -631,7 +631,7 @@ export function formateTimeWithTime(dateTime) {
 
 // 防xss攻击的过滤html代码的工具
 require('../../static/js/xss');
-const filterXSSOptions = { whiteList: { div: ['style', 'data-index', 'class'], u: ['style', 'class'], b: ['style', 'class'], ul: ['style', 'class'], ol: ['style', 'class'], li: ['style', 'class'], br: ['style', 'class'], a: ['href', 'class', 'target', 'style', 'class'], img: ['src', 'alt', 'class', 'data-mds-key', 'data-*'], p: ['title', 'class', 'style'], b: ['style', 'class'], span: ['style', 'class'] } };
+const filterXSSOptions = { whiteList: { div: ['style', 'data-index', 'class'], u: ['style', 'class'], ul: ['style', 'class'], ol: ['style', 'class'], li: ['style', 'class'], br: ['style', 'class'], a: ['href', 'class', 'target', 'style', 'class'], img: ['src', 'alt', 'class', 'data-mds-key', 'data-*'], p: ['title', 'class', 'style'], b: ['style', 'class'], span: ['style', 'class'] } };
 
 /**
  * 字符转义显示处理,同时做了xss攻击防护
