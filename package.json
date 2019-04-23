@@ -37,7 +37,8 @@
   "files": [
     "dist",
     "lib",
-    "index.js"
+    "static",
+    "src"
   ],
   "dependencies": {
     "tslib": "^1.9.3"

@@ -15,11 +15,18 @@ const fileList = sourceFilePathArray(entryDir);
 // base 父层级 编译时依次从父层级下开始编译 并创建对应层级的同名文件夹和文件
 const excludeSpecifiedPaths = {'base': entryDir};
 
+const getFileName = (path, keyword) => {
+    const fileSplitArr = path.split('/');
+    if (fileSplitArr.length) {
+        return fileSplitArr[fileSplitArr.length-1];
+    } else {
+        return '';
+    }
+}
 gulp.task('compressEs', function() {
     const _js_filePathArray = fileList.filter(item => {
-        return item.indexOf('js') > -1
+        return getFileName(item).indexOf('js') > -1
     });
-    // gulp.src(_js_filePathArray, excludeSpecifiedPaths)
     gulp.src(_js_filePathArray)
         .pipe(babel({
             presets: ['@babel/env']
@@ -27,9 +34,10 @@ gulp.task('compressEs', function() {
         .pipe(gulp.dest(outputDir));
 });
 
+
 gulp.task('compressTs', function() {
     const _ts_filePathArray = fileList.filter(item => {
-        return item.indexOf('ts') > -1
+        return getFileName(item).indexOf('ts') > -1
     });
     gulp.src(_ts_filePathArray)
         .pipe(tsc({
@@ -41,7 +49,7 @@ gulp.task('compressTs', function() {
 });
 
 gulp.task('dist',function() {
-    gulp.src('lib/*')
+    gulp.src(outputDir)
         .pipe(concat('index.js'))
         .pipe(umd())
         .pipe(gulp.dest('dist'));

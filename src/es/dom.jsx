@@ -3,7 +3,6 @@
  * 常用dom操作
  */
 
-
 export function addClass(ele, className) {
     let currClass = ele.getAttribute('class');
 
