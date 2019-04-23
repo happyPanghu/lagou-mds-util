@@ -1,6 +1,6 @@
 {
   "name": "lagou-mds-util",
-  "version": "1.0.17",
+  "version": "1.0.0",
   "description": "简招工具类",
   "main": "lib/index.js",
   "scripts": {
@@ -42,5 +42,12 @@
   ],
   "dependencies": {
     "tslib": "^1.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ant-design/ant-design.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ant-design/ant-design/issues"
   }
 }
