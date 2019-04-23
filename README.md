@@ -16,9 +16,10 @@ npm install --save-dev lagou-mds-util
 
 
 ```js
-import util from 'lagou-mds-util'
+import {array} from 'lagou-mds-util'
 
-util.cookie.get('id')
+array.getArray([1,2,3,5,4])
+array.contain([1,2,3,4], 1)
  
 ```
 
@@ -26,14 +27,27 @@ util.cookie.get('id')
 ## API
 
 
-### .cookie.get()
+### array.getArray()
 
-##### options.get
+##### options.Array
 
-Type: `String`<br>
+Type: `Array`<br>
 
-获取cookie指定字段值
+将数组序列化为key-value形式数组  
 
+### array.contain(array, item)
+
+##### options.array
+
+Type: `Array`<br>
+
+
+指定数组
+##### options.item
+
+Type: `String or Number`<br>
+
+指定关键词
 
 
 
